@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import { db } from './firebase';
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import logoImg from './assests/logo.png';
+//import logoImg from './assests/logo.png';
 import img1 from './assests/1.png';
 import img2 from './assests/2.png';
 import img3 from './assests/3.png';
