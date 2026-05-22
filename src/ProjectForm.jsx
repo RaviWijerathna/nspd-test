@@ -1106,7 +1106,7 @@ export default function CombinedForm() {
             <F si="ස්ත්‍රී පුරුෂ භාවය *" ta="பாலினம் *" en="Gender *">
               <select name="gender" value={personData.gender} onChange={handlePersonChange} style={styles.sel}>
                 <option value="">-- තෝරන්න / தெரிவு செய்யவும் / Select --</option>
-                <option value="Male">පිරිමි / ஆண் / Male</option>
+                <option value="Male">පුරුෂ / ஆண் / Male</option>
                 <option value="Female">ස්ත්‍රී / பெண் / Female</option>
                 <option value="Other">වෙනත් / மற்றவை / Other</option>
               </select>
