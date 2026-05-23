@@ -223,8 +223,10 @@ const styles = {
     padding: 'clamp(10px, 4vw, 40px) clamp(8px, 2vw, 16px)',
     fontFamily: '"Outfit", "Noto Sans Sinhala", "Noto Sans Tamil", -apple-system, sans-serif',
     display: 'flex',
+    flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    gap: '30px'
   },
   card: {
     maxWidth: '1200px',
@@ -380,6 +382,17 @@ const styles = {
     marginBottom: '20px',
     boxShadow: '0 8px 20px rgba(10, 25, 47, 0.08)'
   },
+  footer: {
+    width: '100%',
+    textAlign: 'center',
+    padding: '24px 16px',
+    fontSize: '13px',
+    color: '#6B7280',
+    fontWeight: '600',
+    fontFamily: '"Outfit", "Noto Sans Sinhala", "Noto Sans Tamil", sans-serif',
+    letterSpacing: '0.5px',
+    opacity: 0.85
+  }
 };
 
 const formatAsterisk = (text) => {
@@ -669,12 +682,23 @@ export default function CombinedForm() {
           .logo-img { height: 100px !important; top: 15px !important; }
           .section-title { font-size: 16px !important; }
           .header-box { min-height: 260px !important; }
+          .footer-top { grid-template-columns: 1fr !important; gap: 32px !important; text-align: center !important; }
+          .footer-col { align-items: center !important; }
+          .footer-link { justify-content: center !important; }
         }
 
         @media (max-width: 480px) {
           .tab-btn span { font-size: 11px !important; }
           .tab-btn strong { font-size: 12px !important; }
           .logo-img { height: 80px !important; }
+        }
+
+        .footer-link:hover {
+          color: #0a192f !important;
+          transform: translateX(4px);
+        }
+        .footer-link {
+          transition: all 0.3s ease !important;
         }
       `}</style>
 
@@ -1374,6 +1398,11 @@ export default function CombinedForm() {
 
         </div>
       </div>
+
+      {/* FOOTER */}
+      <footer style={styles.footer}>
+        Copyright © 2026 NSPD . All Rights Reserved. Design By Vihangana Roosarani,Ravindi Wijerathna
+      </footer>
     </div>
   );
 }
