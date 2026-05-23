@@ -1401,7 +1401,7 @@ export default function CombinedForm() {
 
       {/* FOOTER */}
       <footer style={styles.footer}>
-        Copyright © 2026 NSPD . All Rights Reserved. Design By Vihangana Roosarani,Ravindi Wijerathna
+        Copyright © 2026 NSPD . All Rights Reserved. Design By Vihangana Roosarani & Ravindi Wijerathna
       </footer>
     </div>
   );
