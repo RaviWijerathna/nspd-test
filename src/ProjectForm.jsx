@@ -172,7 +172,8 @@ const PROVINCES = Object.keys(PROVINCE_DATA);
 // ✅ FIX 3: All disability options for multi-checkbox
 const DISABILITY_OPTIONS = [
   { value: 'Physical / Bodily Disability', si: '1. ශාරීරික / කායික ආබාධ', ta: '1. உடல் / உடலியல் குறைபாடு', en: '1. Physical / Bodily Disability' },
-  { value: 'Sensory Disability', si: '2. සංවේදන ආබාධ', ta: '2. உணர்வு குறைபாடு', en: '2. Sensory Disability' },
+  { value: 'Sensory Disability - Visual', si: '2.1 සංවේදන ආබාධ - දෘශ්‍ය ආබාධ', ta: '2.1 உணர்வு குறைபாடு - பார்வை குறைபாடு', en: '2.1 Sensory Disability - Visual' },
+  { value: 'Sensory Disability - Hearing', si: '2.2 සංවේදන ආබාධ - ශ්‍රවණ ආබාධ', ta: '2.2 உணர்வு குறைபாடு - செவித்திறன் குறைபாடு', en: '2.2 Sensory Disability - Hearing' },
   { value: 'Deaf-Blindness', si: '3. අඳ බිහිරිභාවය', ta: '3. பார்வை மற்றும் செவிப்புலன் குறைபாடு', en: '3. Deaf-Blindness' },
   { value: 'Intellectual Disability', si: '4. බුද්ධිමය ආබාධ', ta: '4. அறிவுசார் குறைபாடு', en: '4. Intellectual Disability' },
   { value: 'Psychosocial / Mental Health', si: '5. මනෝ සමාජීය / මානසික සෞඛ්‍යය ආබාධ', ta: '5. உளவியல் / மனநல குறைபாடு', en: '5. Psychosocial / Mental Health' },
@@ -223,10 +224,8 @@ const styles = {
     padding: 'clamp(10px, 4vw, 40px) clamp(8px, 2vw, 16px)',
     fontFamily: '"Outfit", "Noto Sans Sinhala", "Noto Sans Tamil", -apple-system, sans-serif',
     display: 'flex',
-    flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
-    gap: '30px'
+    justifyContent: 'center'
   },
   card: {
     maxWidth: '1200px',
@@ -382,17 +381,6 @@ const styles = {
     marginBottom: '20px',
     boxShadow: '0 8px 20px rgba(10, 25, 47, 0.08)'
   },
-  footer: {
-    width: '100%',
-    textAlign: 'center',
-    padding: '24px 16px',
-    fontSize: '13px',
-    color: '#6B7280',
-    fontWeight: '600',
-    fontFamily: '"Outfit", "Noto Sans Sinhala", "Noto Sans Tamil", sans-serif',
-    letterSpacing: '0.5px',
-    opacity: 0.85
-  }
 };
 
 const formatAsterisk = (text) => {
@@ -682,23 +670,12 @@ export default function CombinedForm() {
           .logo-img { height: 100px !important; top: 15px !important; }
           .section-title { font-size: 16px !important; }
           .header-box { min-height: 260px !important; }
-          .footer-top { grid-template-columns: 1fr !important; gap: 32px !important; text-align: center !important; }
-          .footer-col { align-items: center !important; }
-          .footer-link { justify-content: center !important; }
         }
 
         @media (max-width: 480px) {
           .tab-btn span { font-size: 11px !important; }
           .tab-btn strong { font-size: 12px !important; }
           .logo-img { height: 80px !important; }
-        }
-
-        .footer-link:hover {
-          color: #0a192f !important;
-          transform: translateX(4px);
-        }
-        .footer-link {
-          transition: all 0.3s ease !important;
         }
       `}</style>
 
@@ -934,7 +911,7 @@ export default function CombinedForm() {
             <F si="ස්ත්‍රී පුරුෂ භාවය *" ta="பாலினம் *" en="Gender *">
               <select name="gender" value={companyData.gender} onChange={handleCompanyChange} style={styles.sel}>
                 <option value="">-- තෝරන්න / தெரிவு செய்யவும் / Select --</option>
-                <option value="Male">පුරුෂ / ஆண் / Male</option>
+                <option value="Male">පිරිමි / ஆண் / Male</option>
                 <option value="Female">ස්ත්‍රී / பெண் / Female</option>
                 <option value="Any">වෙනත් / எவரும் / Any</option>
               </select>
@@ -1130,7 +1107,7 @@ export default function CombinedForm() {
             <F si="ස්ත්‍රී පුරුෂ භාවය *" ta="பாலினம் *" en="Gender *">
               <select name="gender" value={personData.gender} onChange={handlePersonChange} style={styles.sel}>
                 <option value="">-- තෝරන්න / தெரிவு செய்யவும் / Select --</option>
-                <option value="Male">පුරුෂ / ஆண் / Male</option>
+                <option value="Male">පිරිමි / ஆண் / Male</option>
                 <option value="Female">ස්ත්‍රී / பெண் / Female</option>
                 <option value="Other">වෙනත් / மற்றவை / Other</option>
               </select>
@@ -1398,11 +1375,6 @@ export default function CombinedForm() {
 
         </div>
       </div>
-
-      {/* FOOTER */}
-      <footer style={styles.footer}>
-        Copyright © 2026 NSPD . All Rights Reserved. Design By Vihangana Roosarani & Ravindi Wijerathna
-      </footer>
     </div>
   );
 }
