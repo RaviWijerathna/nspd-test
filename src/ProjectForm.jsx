@@ -1377,8 +1377,7 @@ export default function CombinedForm() {
         </div>
       </div>
       <footer style={{ marginTop: '30px', textAlign: 'center', color: '#64748b', fontSize: '13px', fontWeight: '500', lineHeight: '1.6', zIndex: 10 }}>
-        <p style={{ margin: '0' }}>Copyright &copy; 2026 NSPD . All Rights Reserved.</p>
-        <p style={{ margin: '0' }}>Design By Vihangana Roosarani &amp; Ravindi Wijerathna</p>
+        <p style={{ margin: '0' }}>Copyright &copy; 2026 NSPD . All Rights Reserved.Design By Vihangana Roosarani &amp; Ravindi Wijerathna</p>
       </footer>
     </div>
   );
